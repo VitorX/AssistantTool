@@ -50,7 +50,7 @@
             this.txtWindowHandler.Name = "txtWindowHandler";
             this.txtWindowHandler.Size = new System.Drawing.Size(100, 21);
             this.txtWindowHandler.TabIndex = 1;
-            this.txtWindowHandler.Text = "198260";
+            this.txtWindowHandler.Text = "657702";
             // 
             // label1
             // 

@@ -14,8 +14,12 @@ namespace AssistantTool
 
         public const int WM_PARENTNOTIFY = 0x0210;
         //public const int WM_PARENTNOTIFY = 0x0210;
-        public const int WM_RBUTTONDOWN =0x0204;
+        public const int WM_RBUTTONDOWN = 0x0204;
         public const int WM_RBUTTONUP = 0x0205;
+
+        public const int WM_KEYDOWN = 0x0100;
+        public const int WM_KEYUP = 0x0101;
+        public const uint WM_SETTEXT = 0x000C;
 
         [System.Runtime.InteropServices.DllImportAttribute("user32.dll", EntryPoint = "ShowWindow")]
         public static extern bool ShowWindow(System.IntPtr hWnd, int nCmdShow);
@@ -24,9 +28,15 @@ namespace AssistantTool
         public static extern bool IsWindowVisible(IntPtr hwnd);
 
         [DllImport("USER32.DLL")]
-        public static extern bool SetForegroundWindow(IntPtr hWnd);         
+        public static extern bool SetForegroundWindow(IntPtr hWnd);
+
+        [DllImport("User32.DLL")]
+        public static extern IntPtr FindWindowEx(IntPtr hwndParent, IntPtr hwndChildAfter, string lpszClass, string lpszWindow);
 
         [DllImport("user32.dll", EntryPoint = "SendMessage")]
         public static extern int SendMessage(IntPtr hwnd, int wMsg, int wParam, int lParam);
+
+        [DllImport("User32.DLL")]
+        public static extern int SendMessage(IntPtr hWnd, uint Msg, int wParam, string lParam);
     }
 }

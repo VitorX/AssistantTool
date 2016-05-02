@@ -38,10 +38,17 @@ namespace AssistantTool
             //WindowsHelp.SendMessage(windowHandler, WindowsHelp.WM_PARENTNOTIFY, 0x204, 0x01da0201);
 
             WindowsHelp.SetForegroundWindow(windowHandler);
-            WindowsHelp.SendMessage(windowHandler, WindowsHelp.WM_RBUTTONDOWN, 0, 0x01da0201);
-            Thread.Sleep(100);
-            WindowsHelp.SendMessage(windowHandler, WindowsHelp.WM_RBUTTONDOWN, 0, 0x01da0201);
-            WindowsHelp.SendMessage(windowHandler, WindowsHelp.WM_RBUTTONUP, 0, 0x01da0201);
+            //WindowsHelp.SendMessage(windowHandler, WindowsHelp.WM_RBUTTONDOWN, 0, 0x01da0201);
+            //Thread.Sleep(100);
+            ////WindowsHelp.SendMessage(windowHandler, WindowsHelp.WM_RBUTTONDOWN, 0, 0x01da0201);
+            //WindowsHelp.SendMessage(windowHandler, WindowsHelp.WM_RBUTTONUP, 0, 0x01da0201);
+
+            //System.Diagnostics.Process vProcess = System.Diagnostics.Process.Start("notepad.exe");
+            //while (vProcess.MainWindowHandle == IntPtr.Zero) vProcess.Refresh();
+            //IntPtr vHandle = WindowsHelp.FindWindowEx(vProcess.MainWindowHandle,
+            //    IntPtr.Zero, "Edit", null);
+
+            WindowsHelp.SendMessage(windowHandler, WindowsHelp.WM_SETTEXT, 0, "Hello World!");
         }
     }
 
